@@ -3,40 +3,64 @@ import {useState} from "react";
 import KpiCard from "../KpiCard";
 
 export default function CommandCenter({config,kpis,risks,schedule,progress,onNavigate}:any){
-  const [detail,setDetail]=useState("Click any KPI card to see the explanation and recommended action."); 
+  const [detail,setDetail]=useState("Select a KPI to see the project impact and recommended action."); 
   const [severity,setSeverity]=useState("all"); 
   const [zone,setZone]=useState("all"); 
   const [search,setSearch]=useState(""); 
+
   const zones=Array.from(new Set(risks.map((r:any)=>r.zone))); 
-  const filtered=risks.filter((r:any)=>(severity==="all"||r.severity===severity)&&(zone==="all"||r.zone===zone)&&(!search||`${r.title} ${r.zone} ${r.owner} ${r.id}`.toLowerCase().includes(search.toLowerCase())));
   const highRisks=risks.filter((r:any)=>r.severity==="High").length;
   const delayed=progress.filter((p:any)=>p.actual<p.planned).length;
+  const gmp = kpis.find((k:any)=>k.label==="GMP Readiness");
+  const scheduleKpi = kpis.find((k:any)=>k.label==="Schedule Progress");
+
+  const filtered=risks.filter((r:any)=>
+    (severity==="all"||r.severity===severity) &&
+    (zone==="all"||r.zone===zone) &&
+    (!search||`${r.title} ${r.zone} ${r.owner} ${r.id}`.toLowerCase().includes(search.toLowerCase()))
+  );
 
   return (
     <section>
-      <div className="hero premium-hero">
+      <div className="ops-hero">
         <div>
-          <span className="tag">Executive Command Center</span>
+          <span className="tag">Command Center</span>
           <h2>{config.projectTitle}</h2>
-          <p>One project intelligence layer connecting progress, risks, GMP readiness, BIM data, live cameras, and Exy assistant.</p>
+          <p>Project intelligence view for health, progress, risk, GMP readiness and live decision support.</p>
         </div>
-        <div className="hero-orbit">
-          <span>Schedule</span><span>Quality</span><span>BIM</span><span>Safety</span><span>Supply</span>
+        <div className="ops-health">
+          <span>Project Health</span>
+          <strong>82</strong>
+          <small>Watch</small>
         </div>
       </div>
 
-      <div className="grid three" style={{marginBottom:16}}>
-        <div className="panel hero-score">
-          <h3>Project Health</h3>
-          <div className="score-ring"><span>82</span></div>
-          <p className="muted">Watch status due to schedule and GMP readiness.</p>
+      <div className="ops-grid">
+        <div className="ops-main panel">
+          <div className="panel-title-row">
+            <h3>Executive KPIs</h3>
+            <span className="badge danger">{highRisks} high risks</span>
+          </div>
+          <div className="grid kpis compact-kpis">
+            {kpis.map((k:any)=><KpiCard key={k.label} kpi={k} onClick={()=>setDetail(`${k.label}: ${k.detail}`)}/>)}
+          </div>
         </div>
-        <button className="action-panel" onClick={()=>onNavigate("progress")}><strong>Open Progress Micro-App</strong><span>{delayed} delayed zones detected</span></button>
-        <button className="action-panel" onClick={()=>onNavigate("site")}><strong>Open Site Supervision</strong><span>Evercam live camera wall</span></button>
-      </div>
 
-      <div className="grid kpis">
-        {kpis.map((k:any)=><KpiCard key={k.label} kpi={k} onClick={()=>setDetail(`${k.label}: ${k.detail}`)}/>)}
+        <div className="panel">
+          <h3>AI Insight</h3>
+          <div className="insight-card">
+            <b>Focus required</b>
+            <p>{delayed} delayed zones are impacting schedule confidence. GMP readiness is currently {gmp?.value}. Prioritize Utilities, Cleanroom closeout and CQV packages.</p>
+          </div>
+          <button className="action-panel mini-action" onClick={()=>onNavigate("progress")}>
+            <strong>Open Progress</strong>
+            <span>{scheduleKpi?.value} complete</span>
+          </button>
+          <button className="action-panel mini-action" onClick={()=>onNavigate("site")}>
+            <strong>Open Cameras</strong>
+            <span>Evercam live view</span>
+          </button>
+        </div>
       </div>
 
       <div className="grid two">
