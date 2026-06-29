@@ -1,0 +1,5 @@
+'use client';
+import {useEffect,useRef,useState} from "react";
+export default function SiteSupervision({config}:any){const ref=useRef<HTMLDivElement>(null);const [status,setStatus]=useState("Loading Evercam widget...");
+useEffect(()=>{if(!config.evercam?.enabled||!ref.current)return;const s=document.createElement("script");s.src=`https://dash.evercam.io/widget.js?widgetKey=${config.evercam.widgetKey}&widgetId=${config.evercam.widgetId}`;s.async=true;s.onload=()=>setStatus("Evercam widget loaded.");s.onerror=()=>setStatus("Evercam could not be loaded in this environment.");ref.current.innerHTML="";ref.current.appendChild(s);const t=window.setTimeout(()=>setStatus("If the camera wall is not visible, the network or browser may be blocking the external widget."),5000);return()=>window.clearTimeout(t)},[config.evercam]);
+return <section><div className="hero"><span className="tag">Site Supervision</span><h2>Live Camera Wall</h2><p>Evercam is used as the site supervision provider for live visual monitoring.</p></div><div className="panel"><h3>Evercam Camera Dashboard</h3><p className="muted">{status}</p><div className="evercam" ref={ref}/></div></section>}

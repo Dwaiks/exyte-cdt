@@ -1,0 +1,1 @@
+export default function KpiCard({kpi,onClick}:any){return <div className="card kpi" onClick={onClick}><div className="klabel">{kpi.label}</div><div className="value">{kpi.value}</div><span className={`status ${kpi.status}`}>{kpi.status}</span></div>}

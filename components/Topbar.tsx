@@ -1,0 +1,1 @@
+export default function Topbar({config}:any){return <div className="topbar"><div><b>{config.platformName}</b> · {config.clientName} configuration</div><div className="pill">Milestone 1 · Functional MVP</div></div>}

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "RISK-001",
+    "severity": "High",
+    "zone": "Utilities",
+    "title": "Mechanical equipment delivery delay",
+    "owner": "Procurement",
+    "due": "2026-07-05"
+  },
+  {
+    "id": "RISK-002",
+    "severity": "High",
+    "zone": "Cleanroom",
+    "title": "Cleanroom envelope completion behind baseline",
+    "owner": "Construction",
+    "due": "2026-07-12"
+  },
+  {
+    "id": "RISK-003",
+    "severity": "Medium",
+    "zone": "Process Area",
+    "title": "Commissioning package pending approval",
+    "owner": "CQV",
+    "due": "2026-07-18"
+  },
+  {
+    "id": "RISK-004",
+    "severity": "Medium",
+    "zone": "Warehouse",
+    "title": "Material storage capacity nearing limit",
+    "owner": "Logistics",
+    "due": "2026-07-09"
+  },
+  {
+    "id": "RISK-005",
+    "severity": "Medium",
+    "zone": "GMP Documentation",
+    "title": "Open GMP documentation gaps",
+    "owner": "Quality",
+    "due": "2026-07-15"
+  },
+  {
+    "id": "RISK-006",
+    "severity": "Low",
+    "zone": "Site Access",
+    "title": "Temporary route change requires communication",
+    "owner": "Logistics",
+    "due": "2026-07-02"
+  },
+  {
+    "id": "RISK-007",
+    "severity": "Low",
+    "zone": "Safety",
+    "title": "PPE compliance below target in one zone",
+    "owner": "HSE",
+    "due": "2026-07-08"
+  }
+]

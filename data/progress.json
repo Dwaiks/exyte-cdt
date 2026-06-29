@@ -1,0 +1,37 @@
+[
+  {
+    "zone": "Cleanroom",
+    "planned": 72,
+    "actual": 61,
+    "status": "Delayed",
+    "driver": "Envelope completion and ceiling grid installation"
+  },
+  {
+    "zone": "Utilities",
+    "planned": 78,
+    "actual": 66,
+    "status": "Delayed",
+    "driver": "Mechanical equipment delivery delay"
+  },
+  {
+    "zone": "Process Area",
+    "planned": 64,
+    "actual": 59,
+    "status": "Watch",
+    "driver": "Commissioning package pending approval"
+  },
+  {
+    "zone": "Warehouse",
+    "planned": 70,
+    "actual": 72,
+    "status": "Ahead",
+    "driver": "Material handling works completed early"
+  },
+  {
+    "zone": "Site Infra",
+    "planned": 58,
+    "actual": 55,
+    "status": "Watch",
+    "driver": "Temporary access route change"
+  }
+]

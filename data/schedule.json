@@ -1,0 +1,27 @@
+[
+  {
+    "zone": "Cleanroom",
+    "planned": 72,
+    "actual": 61
+  },
+  {
+    "zone": "Utilities",
+    "planned": 78,
+    "actual": 66
+  },
+  {
+    "zone": "Process Area",
+    "planned": 64,
+    "actual": 59
+  },
+  {
+    "zone": "Warehouse",
+    "planned": 70,
+    "actual": 72
+  },
+  {
+    "zone": "Site Infra",
+    "planned": 58,
+    "actual": 55
+  }
+]

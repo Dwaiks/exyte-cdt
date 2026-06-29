@@ -1,0 +1,47 @@
+[
+  {
+    "id": "AHU-001",
+    "name": "Air Handling Unit 01",
+    "system": "HVAC",
+    "zone": "Cleanroom",
+    "status": "Installed",
+    "gmpCritical": true,
+    "metadataCompleteness": 82
+  },
+  {
+    "id": "PMP-014",
+    "name": "Process Water Pump",
+    "system": "Process Utilities",
+    "zone": "Utilities",
+    "status": "Delayed",
+    "gmpCritical": true,
+    "metadataCompleteness": 64
+  },
+  {
+    "id": "PNL-203",
+    "name": "Electrical Panel 203",
+    "system": "Electrical",
+    "zone": "Process Area",
+    "status": "In Progress",
+    "gmpCritical": false,
+    "metadataCompleteness": 71
+  },
+  {
+    "id": "DR-044",
+    "name": "Cleanroom Door 044",
+    "system": "Architecture",
+    "zone": "Cleanroom",
+    "status": "Open Issue",
+    "gmpCritical": true,
+    "metadataCompleteness": 58
+  },
+  {
+    "id": "VAV-118",
+    "name": "VAV Box 118",
+    "system": "HVAC",
+    "zone": "Warehouse",
+    "status": "Installed",
+    "gmpCritical": false,
+    "metadataCompleteness": 91
+  }
+]

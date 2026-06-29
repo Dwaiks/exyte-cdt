@@ -1,0 +1,50 @@
+[
+  {
+    "label": "Project Health",
+    "value": "82/100",
+    "status": "watch",
+    "detail": "Overall project health is stable but schedule and GMP readiness require active management."
+  },
+  {
+    "label": "Schedule Progress",
+    "value": "68%",
+    "status": "watch",
+    "detail": "Actual progress is 68% against planned 74%. Focus recovery on Utilities and Cleanroom fit-out."
+  },
+  {
+    "label": "Cost Performance",
+    "value": "94%",
+    "status": "good",
+    "detail": "Cost performance remains within tolerance."
+  },
+  {
+    "label": "Safety Performance",
+    "value": "0 LTI",
+    "status": "good",
+    "detail": "No lost time incidents recorded. PPE compliance is trending at 96%."
+  },
+  {
+    "label": "GMP Readiness",
+    "value": "57%",
+    "status": "watch",
+    "detail": "GMP readiness is progressing, but documentation, CQV packages, and cleanroom closeout require attention."
+  },
+  {
+    "label": "Open Risks",
+    "value": "7",
+    "status": "risk",
+    "detail": "There are 7 active risks, including 2 high-severity risks requiring management attention."
+  },
+  {
+    "label": "CQV Progress",
+    "value": "42%",
+    "status": "watch",
+    "detail": "CQV activities have started for utilities and process systems."
+  },
+  {
+    "label": "Turnover Readiness",
+    "value": "33%",
+    "status": "watch",
+    "detail": "System turnover packages are being prepared."
+  }
+]

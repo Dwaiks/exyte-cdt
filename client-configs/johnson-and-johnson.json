@@ -1,0 +1,18 @@
+{
+  "platformName": "Exyte CDT",
+  "version": "v2.0",
+  "clientName": "Johnson & Johnson",
+  "clientShortName": "J&J",
+  "projectTitle": "Johnson & Johnson Construction Digital Twin",
+  "projectSubtitle": "New Facility Construction Project",
+  "assistantName": "Exy",
+  "theme": {
+    "primary": "#d71920",
+    "secondary": "#8f1016"
+  },
+  "evercam": {
+    "enabled": true,
+    "widgetKey": "8d5d493468bc4133b29ec1d5d93e59c3",
+    "widgetId": "0bb75992"
+  }
+}
