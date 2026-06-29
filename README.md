@@ -1,15 +1,15 @@
 # Exyte CDT
 
-## Milestone 3
+## UI Batch 1
 
-Adds:
-- Functional BIM / Data Foundation micro-app
-- Mock federated model asset selector
-- Asset properties panel
-- System filtering
-- Metadata completeness indicator
-- Functional Services During Construction workflow cockpit
-- Exy can answer asset, metadata, and GMP-critical asset questions
+Changes:
+- Removed Executive / Site Management / Innovation mode tabs
+- Added clean Command Center sidebar section
+- Premium dark command-center UI polish
+- Improved hero section
+- Improved Project Health visual
+- Improved KPI cards, spacing, hover states, and status indicators
+- Improved Exy chat styling
 
 Run:
 ```bash

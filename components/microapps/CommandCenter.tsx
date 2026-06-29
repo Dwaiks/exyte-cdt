@@ -14,14 +14,23 @@ export default function CommandCenter({config,kpis,risks,schedule,progress,onNav
 
   return (
     <section>
-      <div className="hero">
-        <span className="tag">Functional Digital Twin Demo</span>
-        <h2>{config.projectTitle}</h2>
-        <p>Executive command center connecting KPIs, progress, risks, GMP readiness, cameras, and Exy assistant.</p>
+      <div className="hero premium-hero">
+        <div>
+          <span className="tag">Executive Command Center</span>
+          <h2>{config.projectTitle}</h2>
+          <p>One project intelligence layer connecting progress, risks, GMP readiness, BIM data, live cameras, and Exy assistant.</p>
+        </div>
+        <div className="hero-orbit">
+          <span>Schedule</span><span>Quality</span><span>BIM</span><span>Safety</span><span>Supply</span>
+        </div>
       </div>
 
       <div className="grid three" style={{marginBottom:16}}>
-        <div className="panel hero-score"><h3>Project Health</h3><div className="score">82</div><p className="muted">Watch status due to schedule and GMP readiness.</p></div>
+        <div className="panel hero-score">
+          <h3>Project Health</h3>
+          <div className="score-ring"><span>82</span></div>
+          <p className="muted">Watch status due to schedule and GMP readiness.</p>
+        </div>
         <button className="action-panel" onClick={()=>onNavigate("progress")}><strong>Open Progress Micro-App</strong><span>{delayed} delayed zones detected</span></button>
         <button className="action-panel" onClick={()=>onNavigate("site")}><strong>Open Site Supervision</strong><span>Evercam live camera wall</span></button>
       </div>
@@ -32,7 +41,7 @@ export default function CommandCenter({config,kpis,risks,schedule,progress,onNav
 
       <div className="grid two">
         <div className="panel">
-          <h3>Risk & Issue Register</h3>
+          <div className="panel-title-row"><h3>Risk & Issue Register</h3><span className="badge danger">{highRisks} high</span></div>
           <div className="toolbar">
             <select value={severity} onChange={e=>setSeverity(e.target.value)}><option value="all">All Severities</option><option>High</option><option>Medium</option><option>Low</option></select>
             <select value={zone} onChange={e=>setZone(e.target.value)}><option value="all">All Zones</option>{zones.map((z:any)=><option key={z}>{z}</option>)}</select>
@@ -47,7 +56,7 @@ export default function CommandCenter({config,kpis,risks,schedule,progress,onNav
           <div className="detail">{detail}</div>
           <h3 style={{marginTop:18}}>Schedule vs Actual</h3>
           {schedule.map((i:any)=><div className="zone-row" key={i.zone}><strong>{i.zone}</strong><div className="track"><div className={`bar ${i.actual<i.planned?"delay":""}`} style={{width:`${i.actual}%`}}/></div><span>{i.actual}%</span></div>)}
-          <div className="detail" style={{marginTop:14}}>Critical focus: {highRisks} high risks and {delayed} delayed zones.</div>
+          <div className="detail focus-note" style={{marginTop:14}}>Critical focus: {highRisks} high risks and {delayed} delayed zones.</div>
         </div>
       </div>
     </section>
